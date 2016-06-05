@@ -15,7 +15,7 @@ Protocol for the offer and the answer. There is no communication through the
 server, it's only inside the browser's page.
 
 
- * localConnection = new RTCPeerConnection
+ * `localConnection = new RTCPeerConnection`
  * remoteConnection = new RTCPeerConnection
  * createDataChannel
  * onicecandidate - handle ice candidate
