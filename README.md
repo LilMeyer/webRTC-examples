@@ -1,5 +1,7 @@
 Messaging system
 ================
+[![Build Status](https://img.shields.io/travis/LilMeyer/webRTC-examples/master.svg?style=flat-square)](https://travis-ci.org/LilMeyer/webRTC-examples)
+[![Dependency Status](https://img.shields.io/david/LilMeyer/webRTC-examples/master.svg?style=flat-square)](https://david-dm.org/lilmeyer/webRTC-examples)
 
 For a better understanding, I decided to split the development into several
 steps.
