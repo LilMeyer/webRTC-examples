@@ -10,10 +10,8 @@ let userId;
 const MESSAGES = {
   SEND_ICE_CANDIDATE: 'send_ice_candidate',
   RECEIVE_ICE_CANDIDATE: 'receive_ice_candidate',
-  SEND_OFFER: 'send_offer',
   SEND_DESCRIPTION: 'send_description',
   RECEIVE_DESCRIPTION: 'receive_description',
-  RECEIVE_OFFER: 'receive_offer',
   WELCOME: 'welcome',                     // gives an id to the user
 }
 
@@ -31,10 +29,10 @@ var peerConnectionConfig = {
 const sendButton = document.getElementById('send_message_button');
 const textAreaSend = document.getElementById('data_channel_send');
 const textAreaReceive = document.getElementById('data_channel_receive');
-const textAreaSdp = document.getElementById('textarea_sdp')
-const textAreaSdpRec = document.getElementById('textarea_sdp_r')
-const labelSdp = document.getElementById('label_type')
-const labelSdpRec = document.getElementById('label_type_r')
+const textAreaSdp = document.getElementById('textarea_sdp');
+const textAreaSdpRec = document.getElementById('textarea_sdp_r');
+const labelSdp = document.getElementById('label_type');
+const labelSdpRec = document.getElementById('label_type_r');
 
 // ------------------------------------
 // Helpers
@@ -114,11 +112,6 @@ function onSendChannelStateChange() {
 // Socket logic
 // ------------------------------------
 socket = io();
-
-socket.on(MESSAGES.WELCOME, data => {
-  console.log('welcome received', data);
-  userId = data.id
-});
 
 socket.on(MESSAGES.RECEIVE_DESCRIPTION, dataString => {
   if (!peerConnection) {

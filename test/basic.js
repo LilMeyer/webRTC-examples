@@ -8,9 +8,7 @@ var webdriver = require('selenium-webdriver');
 var seleniumHelpers = require('webrtc-utilities').seleniumLib;
 
 test('Basic datachannel sample', function(t) {
-  console.log('0 +', 0)
   var driver = seleniumHelpers.buildDriver();
-  console.log('1 +', 1)
 
   driver.get('file://' + process.cwd() +
       '/index.html')

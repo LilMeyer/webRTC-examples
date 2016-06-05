@@ -17,10 +17,8 @@ const MESSAGES = {
   LOADING_USER_LIST: 'loading_user_list', // send the user list
   SEND_ICE_CANDIDATE: 'send_ice_candidate',
   RECEIVE_ICE_CANDIDATE: 'receive_ice_candidate',
-  SEND_OFFER: 'send_offer',
   SEND_DESCRIPTION: 'send_description',
   RECEIVE_DESCRIPTION: 'receive_description',
-  RECEIVE_OFFER: 'receive_offer',
   WELCOME: 'welcome',                     // gives an id to the user
 }
 
@@ -45,7 +43,7 @@ const refreshAllClientUserList = () => {
 // Socket logic
 // ------------------------------------
 io.on('connection', socket => {
-  console.log(`A new user connected: ${userId++}`)
+  console.log(`A new user connected: ${++userId}`)
   connectedUsers.add(userId)
   refreshAllClientUserList()
   clientSockets.set(userId, socket)
