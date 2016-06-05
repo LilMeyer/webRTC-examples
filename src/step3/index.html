@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" sizes="32x32" type="image/png" href="images/favicon.png">
+    <title>The Messaging Service</title>
+    <script src="js/adapter.js"></script>
+    <style>
+      /*body { padding-top:0px; }*/
+      textarea { resize: none; }
+      .strong { font-weight: 600 }
+      #connected_users_ul {
+        list-style-type: none;
+      }
+      #connected_users_ul > li {
+        width: 200px;
+        background: silver;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The messaging service</h1>
+
+    <h2 id="your_id"></h2>
+    <h3>Connected users</h3>
+    <ul id="connected_users_ul">
+    </ul>
+    <br />
+
+    <div id="sendReceive">
+      <div id="send">
+        <h2>Send</h2>
+        <textarea id="data_channel_send" disabled placeholder="Press Start, enter some text, then press Send." rows="4" cols="50"></textarea>
+      </div>
+      <input id="send_message_button" type="button" onclick="sendMessage()" value="Send message"></input>
+      <div id="receive">
+        <h2>Received</h2>
+        <textarea id="data_channel_receive" disabled rows="4" cols="50"></textarea>
+      </div>
+      <div id="messages_div"></div>
+    </div>
+
+    <script src='/socket.io/socket.io.js'></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" sizes="32x32" type="image/png" href="images/favicon.png">
+  <title>The Messaging Service</title>
+  <style>
+    /*body { padding-top:0px; }*/
+    textarea { resize: none; }
+    .strong { font-weight: 600 }
+  </style>
+</head>
+
+<body>
+  <h1>The messaging service</h1>
+
+  <div id="buttons">
+    <button id="startButton">Start</button>
+    <button id="sendButton" disabled>Send</button>
+    <button id="closeButton" disabled>Stop</button>
+  </div>
+
+  <div id="sendReceive">
+    <div id="send">
+      <h2>Send</h2>
+      <textarea id="dataChannelSend" disabled placeholder="Press Start, enter some text, then press Send."></textarea>
+    </div>
+    <div id="receive">
+      <h2>Receive</h2>
+      <textarea id="dataChannelReceive" disabled></textarea>
+    </div>
+  </div>
+
+  <br />
+  <div>
+    <label id="label_sdp">Session Description Protocol: </label>
+    <label id="label_type" class="strong"></label>
+    <br />
+    <textarea id="textarea_sdp" rows="15" cols="150"></textarea>
+  </div>
+  <div>
+    <label id="label_sdp_r">Session Description Protocol: </label>
+    <label id="label_type_r" class="strong"></label>
+    <br />
+    <textarea id="textarea_sdp_r" rows="15" cols="150"></textarea>
+  </div>
+
+  <br />
+
+  <script src='/socket.io/socket.io.js'></script>
+  <script type="text/javascript" src="js/adapter.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

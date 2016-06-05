@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" sizes="32x32" type="image/png" href="images/favicon.png">
+    <title>The Messaging Service</title>
+    <script src="js/adapter.js"></script>
+    <style>
+      /*body { padding-top:0px; }*/
+      textarea { resize: none; }
+      .strong { font-weight: 600 }
+    </style>
+  </head>
+  <body>
+    <h1>The messaging service</h1>
+    <br />
+
+    <input id="start" type="button" onclick="start(true)" value="Start"></input>
+
+    <div id="sendReceive">
+      <div id="send">
+        <h2>Send</h2>
+        <textarea id="data_channel_send" disabled placeholder="Press Start, enter some text, then press Send." rows="4" cols="50"></textarea>
+      </div>
+      <div id="receive">
+        <h2>Receive</h2>
+        <textarea id="data_channel_receive" disabled rows="4" cols="50"></textarea>
+      </div>
+    </div>
+    <input id="send_message_button" type="button" onclick="sendMessage()" value="Send message"></input>
+
+    <br />
+    <br />
+    <br />
+    <div>
+      <label id="label_sdp">Session Description Protocol: </label>
+      <label id="label_type" class="strong"></label>
+      <br />
+      <textarea id="textarea_sdp" rows="15" cols="150"></textarea>
+    </div>
+    <div>
+      <label id="label_sdp_r">Session Description Protocol: </label>
+      <label id="label_type_r" class="strong"></label>
+      <br />
+      <textarea id="textarea_sdp_r" rows="15" cols="150"></textarea>
+    </div>
+
+    <br />
+
+
+    <script src='/socket.io/socket.io.js'></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
