@@ -81,6 +81,16 @@ Tests are inspired by webRTC utilities. I have to remove firefox beta and
 unstable plus chrome unstable to make it pass with node version 6.
 [sleep](https://github.com/erikdubbelboer/node-sleep) can't be built on Travis.
 
+## How many users can connect to one server ?
+Supposing it's with long pulling, according to [this](http://stackoverflow.com/questions/15872788/maximum-concurrent-socket-io-connections)
+, we can make up to about 1800 simultaneous connections with the server.
+
+## How can the system support more users ?
+
+Load balancer for managing multiple instances of io.js: https://github.com/drewww/socket.io-benchmarking/blob/rabbit/balancer.js
+RabbitMQ.
+
+
 
 ### References
  1. [WebRTC adapter - github.com](https://github.com/webrtc/adapter)
