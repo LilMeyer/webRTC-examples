@@ -13,8 +13,7 @@
 // The test script language comes from tape.
 var fs = require('fs');
 var test = require('tape');
-var sleep = require('sleep');
-
+var sleep = require('system-sleep');
 // Start of tests.
 test('Check Selenium lib buildDriver method', function (t) {
   var driver = require('./main.js').seleniumLib.buildDriver();
@@ -88,14 +87,14 @@ test('Test step1 page', function (t) {
     return driver.executeScript(mainSrting)
   })
   .then(function () {
-    sleep.sleep(2);
+    sleep(2000);
     return driver.executeScript(
       'document.getElementById("dataChannelSend").value = "MessageA";' +
       'document.getElementById("sendButton").click();'
     );
   })
   .then(function () {
-    sleep.sleep(1);
+    sleep(1000);
     return driver.executeScript(
       'return document.getElementById("dataChannelReceive").value;'
     );

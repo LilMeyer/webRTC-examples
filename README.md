@@ -79,6 +79,7 @@ npm test
 ```
 Tests are inspired by webRTC utilities. I have to remove firefox beta and
 unstable plus chrome unstable to make it pass with node version 6.
+[sleep](https://github.com/erikdubbelboer/node-sleep) can't be built on Travis.
 
 
 ### References
