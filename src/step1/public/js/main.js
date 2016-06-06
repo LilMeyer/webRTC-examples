@@ -36,9 +36,6 @@ function enableStartButton() {
   startButton.disabled = false;
 }
 
-enableStartButton()
-createConnection()
-
 function disableSendButton() {
   sendButton.disabled = true;
 }
@@ -168,3 +165,9 @@ function onReceiveChannelStateChange() {
   var readyState = receiveChannel.readyState;
   trace('Receive channel state is: ' + readyState);
 }
+
+// ------------------------------------
+// Start
+// ------------------------------------
+enableStartButton()
+createConnection()

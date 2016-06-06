@@ -25,17 +25,10 @@ const MESSAGES = {
 // ------------------------------------
 // Helpers
 // ------------------------------------
-const getUserList = () => {
-  let result = []
-  for (let item of connectedUsers) {
-    result.push(item)
-  }
-  return result;
-}
 
 const refreshAllClientUserList = () => {
   io.sockets.emit(MESSAGES.LOADING_USER_LIST, {
-    connectedUsers: getUserList()
+    connectedUsers: Array.from(connectedUsers)
   })
 }
 
@@ -50,7 +43,7 @@ io.on('connection', socket => {
 
   socket.emit(MESSAGES.WELCOME, {
     id: userId,
-    connectedUsers: getUserList()
+    connectedUsers: Array.from(connectedUsers)
   })
 
   socket.on(MESSAGES.EXIT, data => {

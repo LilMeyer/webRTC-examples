@@ -64,7 +64,7 @@ only one server at a time can be launched, and every restart will clear all
 variables.
 
 
-## Step 3
+## Step 3
 
 Manage a list of connected users. The server keeps track of every socket with
 [`clientSockets`](https://github.com/LilMeyer/webRTC-examples/blob/master/src/step3/index.js#L14).
@@ -77,18 +77,44 @@ reinitialize the connection for backward communication.
 ```bash
 npm test
 ```
+To run tests locally, you need chromium-browser.
+
+For linux, follow these steps: http://stackoverflow.com/a/24364290/4388775.
+
+For windows, follow these steps: http://stackoverflow.com/a/26561341/4388775.
+
 Tests are inspired by webRTC utilities. I have to remove firefox beta and
 unstable plus chrome unstable to make it pass with node version 6.
 [sleep](https://github.com/erikdubbelboer/node-sleep) can't be built on Travis.
 
-## How many users can connect to one server ?
-Supposing it's with long pulling, according to [this](http://stackoverflow.com/questions/15872788/maximum-concurrent-socket-io-connections)
-, we can make up to about 1800 simultaneous connections with the server.
 
-## How can the system support more users ?
+#### What percentage of users is supported ?
 
-Load balancer for managing multiple instances of io.js: https://github.com/drewww/socket.io-benchmarking/blob/rabbit/balancer.js
-RabbitMQ.
+According to socket.io:
+
+> It works on every platform, browser or device, focusing equally on reliability
+> and speed.
+
+
+#### How many users can connect to one server ?
+
+Supposing it's in parallel, it [appears](http://stackoverflow.com/questions/15872788/maximum-concurrent-socket-io-connections) that socket.io can support up to about
+1800 simultaneous connections with the server. Otherwise, SocketCluster [observes](http://socketcluster.io/#!/performance)
+42K concurrent users from a single machine.
+
+Finally, Daniel Kleveros [claims](https://www.jayway.com/2015/04/13/600k-concurrent-websocket-connections-on-aws-using-node-js/)
+to have handled 600k concurrent websocket connections.
+For me, it really depends on the use case and the messages per seconds per
+users but I don't see technical limitation.
+
+
+#### How can the system support more users ?
+
+To support more users, we could partition our user set by groups. In real case,
+it's unlikely that every user needs potentially to connect to any user because
+they will not watch the same video for example. Hence, with a persistence
+load balancing strategy, every request of the same user can be sent to the same
+server.
 
 
 
@@ -99,3 +125,4 @@ RabbitMQ.
  4. [Session Description Protocal - wikipedia](https://en.wikipedia.org/wiki/Session_Description_Protocol)
  5. [WebRTC connectivity - developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Connectivity)
  6. [Using multiple nodes](http://socket.io/docs/using-multiple-nodes/)
+ 7. [600k concurrent websocket connections on AWS using Node.js](https://www.jayway.com/2015/04/13/600k-concurrent-websocket-connections-on-aws-using-node-js/)
