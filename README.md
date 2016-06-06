@@ -126,3 +126,4 @@ server.
  5. [WebRTC connectivity - developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Connectivity)
  6. [Using multiple nodes](http://socket.io/docs/using-multiple-nodes/)
  7. [600k concurrent websocket connections on AWS using Node.js](https://www.jayway.com/2015/04/13/600k-concurrent-websocket-connections-on-aws-using-node-js/)
+ 8. [Maximum concurrent Socket.IO connections](http://stackoverflow.com/questions/15872788/maximum-concurrent-socket-io-connections)
