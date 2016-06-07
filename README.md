@@ -104,17 +104,17 @@ Supposing it's in parallel, it [appears](http://stackoverflow.com/questions/1587
 
 Finally, Daniel Kleveros [claims](https://www.jayway.com/2015/04/13/600k-concurrent-websocket-connections-on-aws-using-node-js/)
 to have handled 600k concurrent websocket connections.
-For me, it really depends on the use case and the messages per seconds per
-users but I don't see technical limitation.
+For me, it really depends on the use case and the messages per second per
+user but I don't see technical limitation.
 
 
 #### How can the system support more users ?
 
-To support more users, we could partition our user set by groups. In real case,
-it's unlikely that every user needs potentially to connect to any user because
-they will not watch the same video for example. Hence, with a persistence
-load balancing strategy, every request of the same user can be sent to the same
-server.
+To support more users, we could partition our user set by chosen groups. In real
+case, it's unlikely that every user needs potentially to connect to any user
+because they will not watch the same video for example. Hence, with a
+persistence load balancing strategy, every request of the same user can be sent
+to the same server.
 
 
 
