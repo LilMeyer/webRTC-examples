@@ -116,6 +116,9 @@ because they will not watch the same video for example. Hence, with a
 persistence load balancing strategy, every request of the same user can be sent
 to the same server.
 
+#### How can a create my own stun server ?
+
+Creating a stun server from scratch is a hard problem to tackle. However you can use this [open project](https://github.com/coturn/coturn) mainly written in C and follow the install instructions.
 
 
 ### References
