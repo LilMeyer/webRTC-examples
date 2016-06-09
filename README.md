@@ -12,9 +12,9 @@ understanding, I decided to split the development into several steps.
 npm install
 ```
 
-## Start the server
+## Start the server
 
-You can optionally specify the running step and the port with STEP and PORT
+You can optionally specify the running step and the port with `STEP` and `PORT`
 variables:
 
 ```bash

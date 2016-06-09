@@ -7,7 +7,7 @@ env:
   matrix:
     - BROWSER=chrome  BVER=stable
     - BROWSER=chrome  BVER=beta
-    - BROWSER=firefox BVER=stable
+    # - BROWSER=firefox BVER=stable
 
 matrix:
   fast_finish: true
